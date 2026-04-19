@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Brain-Inspired Mamba for 3D CT Segmentation of Head-and-Neck Lesions</h1>
+<h1>Beyond 2D Slices: TD-Mamba for 3D Volumetric Segmentation of Head and Neck Space-Occupying Lesions</h1>
 
 
 
