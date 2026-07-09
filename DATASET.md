@@ -1,6 +1,6 @@
-# HeNeCT204 Dataset
+# 3D-HNSeg Dataset
 
-`HeNeCT204` is a 3D head-and-neck CT segmentation dataset used to train and evaluate the Brain-Mamba model in this repository. It contains **204 contrast CT volumes** with voxel-wise annotations of three head-and-neck lesion types: **abscess**, **tumor**, and **cyst**.
+`3D-HNSeg` is a 3D head-and-neck CT segmentation dataset used to train and evaluate the Brain-Mamba model in this repository. It contains **204 contrast CT volumes** with voxel-wise annotations of three head-and-neck lesion types: **abscess**, **tumor**, and **cyst**.
 
 ## 1. Data access
 
