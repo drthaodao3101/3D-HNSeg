@@ -1,4 +1,4 @@
-<div align="center">
+
 <h1>Beyond 2D Slices: TD-Mamba for 3D Volumetric Segmentation of Head and Neck Space-Occupying Lesions</h1>
 
 
