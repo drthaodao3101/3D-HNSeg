@@ -1,16 +1,16 @@
 # 3D-HNSeg Dataset
 
-`3D-HNSeg` is a 3D head-and-neck CT segmentation dataset used to train and evaluate the Brain-Mamba model in this repository. It contains **204 contrast CT volumes** with voxel-wise annotations of three head-and-neck lesion types: **abscess**, **tumor**, and **cyst**.
+`3D-HNSeg` is a 3D head-and-neck CT segmentation dataset used to train and evaluate the TD-Mamba model in this repository. It contains **204 contrast CT volumes** with voxel-wise annotations of three head-and-neck lesion types: **abscess**, **tumor**, and **cyst**.
 
 ## 1. Data access
 
-The raw CT volumes and annotation masks used in this project are clinical data collected from **Thống Nhất Hospital** and are **not distributed in this repository**. They contain protected patient information and can only be shared on reasonable request for research purposes.
-
-The dataset (after de-identification) and the training/inference source code will be released through the project repository:
+The dataset documentation and source code are available at the project repository:
 
 **https://github.com/drthaodao3101/3D-HNSeg**
 
-Until the public release, please contact the maintainer to request access to the data.
+The repository provides directory organization and file-format descriptions, label definitions, the fixed cross-validation split manifest, preprocessing/normalization procedures, and licensing/terms of use for the released code and documentation (see below, and README.md for environment setup and training/inference/evaluation commands).
+
+The raw CT volumes and annotation masks are clinical data collected from **Thống Nhất Hospital** and contain protected patient information; they are **not redistributed directly in this repository**. Access to the de-identified imaging data is available on reasonable request for research purposes, in accordance with the applicable institutional and ethical data-sharing requirements — please contact the maintainer.
 
 ## 2. Cohort summary
 
@@ -18,12 +18,14 @@ Until the public release, please contact the maintainer to request access to the
 |---|---|
 | Total annotated cases (CT studies) | 204 |
 | Unique patients | 188 |
-| Patients with more than one study | 15 (2 follow-up scans each, distinguished by exam date) |
+| Patients with more than one study | 15 (2 examinations each, distinguished by exam date) |
+| Total annotated lesions | 241 (179 tumor, 38 cyst, 24 abscess) |
+| Volumes with multiple lesions | 26 (8 with lesions from more than one category) |
 | Modality | Contrast-enhanced head & neck CT |
 | Original in-plane size | 512 × 512 (variable slice count, see below) |
 | Original spacing (median, mm) | ≈ 0.45–1.0 (in-plane), ≈ 0.45–1.0 (axial), case-dependent |
 | Label classes | background, abscess, tumor, cyst |
-| Split protocol | 5-fold cross-validation |
+| Split protocol | 5-fold cross-validation, constructed at the CT-volume level (see Section 7) |
 
 Some patients underwent CT imaging on more than one date (e.g. follow-up or recurrence). Each study is treated as an **independent case** and identified by `<patient_id>` for a single study, or `<patient_id>_<DDMMYY>` when multiple studies exist for the same patient, e.g.:
 
@@ -93,7 +95,7 @@ The dataset fingerprint (`dataset_fingerprint.json`) is computed once over all 2
 
 ## 7. Train / validation split
 
-`splits_final.json` contains a list of 5 folds, each a `{"train": [...], "val": [...]}` dict of case IDs (204 cases total, patient-level grouped):
+`splits_final.json` contains a list of 5 folds, each a `{"train": [...], "val": [...]}` dict of case IDs (204 cases total, split at the CT-volume level):
 
 | Fold | #Train | #Val |
 |---|---|---|
@@ -109,6 +111,8 @@ The dataset fingerprint (`dataset_fingerprint.json`) is computed once over all 2
 
 There is currently **no held-out test set** (`numTest: 0` in `dataset.json`); model selection and reporting are done purely via 5-fold cross-validation on the 204 cases.
 
+**Note on patient-level grouping**: folds were constructed to maintain a reasonably balanced distribution of lesion categories (tumor/cyst/abscess) across partitions. Because 15 patients contributed studies at more than one time point (Section 2), a small number of patients have studies split across different folds — the current partitioning is therefore **not strictly patient-level**. This should be considered when interpreting cross-fold generalization.
+
 ## 8. Preparing your own data in this format
 
 To train this pipeline on a new dataset:
@@ -119,3 +123,8 @@ To train this pipeline on a new dataset:
 4. Generate a `splits_final.json` with your desired K-fold split (grouped by patient if a patient can contribute more than one study).
 
 See [README.md](README.md) for the corresponding training/inference/evaluation commands.
+
+## 9. License and terms of use
+
+- **Code and documentation**: released under [LICENSE](LICENSE) in this repository.
+- **De-identified imaging data**: made available for research use only, on reasonable request, under a data-use agreement consistent with Thống Nhất Hospital's institutional and ethical data-sharing requirements. Redistribution beyond the agreed research use is not permitted.
