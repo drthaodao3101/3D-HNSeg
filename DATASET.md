@@ -12,7 +12,6 @@ The repository provides directory organization and file-format descriptions, lab
 
 **Link Preprocessing Dataset:** [Preprocessing Dataset](https://github.com/USERNAME/REPOSITORY/blob/main/preprocessing_dataset.md)
 
-The raw CT volumes and annotation masks are clinical data collected from **Thống Nhất Hospital** and contain protected patient information. Access to the de-identified imaging data is available on reasonable request for research purposes, in accordance with the applicable institutional and ethical data-sharing requirements.
 
 ## 2. Cohort summary
 
