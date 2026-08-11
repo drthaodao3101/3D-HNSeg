@@ -18,7 +18,7 @@ Until the public release, please contact the maintainer to request access to the
 |---|---|
 | Total annotated cases (CT studies) | 204 |
 | Unique patients | 188 |
-| Patients with more than one study | 16 (2 follow-up scans each, distinguished by exam date) |
+| Patients with more than one study | 15 (2 follow-up scans each, distinguished by exam date) |
 | Modality | Contrast-enhanced head & neck CT |
 | Original in-plane size | 512 × 512 (variable slice count, see below) |
 | Original spacing (median, mm) | ≈ 0.45–1.0 (in-plane), ≈ 0.45–1.0 (axial), case-dependent |
@@ -31,8 +31,6 @@ Some patients underwent CT imaging on more than one date (e.g. follow-up or recu
 13048018_100619   # patient 13048018, study on 10-06-19
 13048018_130919   # patient 13048018, study on 13-09-19
 ```
-
-Because two studies from the same patient can appear in the dataset, **cross-validation folds are constructed so that all studies from the same patient stay in the same fold**, avoiding patient-level leakage between train and validation sets (see `splits_final.json`).
 
 ## 3. Label definitions
 
