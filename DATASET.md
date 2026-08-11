@@ -10,7 +10,9 @@ The dataset documentation and source code are available at the project repositor
 
 The repository provides directory organization and file-format descriptions, label definitions, the fixed cross-validation split manifest, preprocessing/normalization procedures, and licensing/terms of use for the released code and documentation (see below, and README.md for environment setup and training/inference/evaluation commands).
 
-The raw CT volumes and annotation masks are clinical data collected from **Thống Nhất Hospital** and contain protected patient information; they are **not redistributed directly in this repository**. Access to the de-identified imaging data is available on reasonable request for research purposes, in accordance with the applicable institutional and ethical data-sharing requirements — please contact the maintainer.
+**Link Preprocessing Dataset:** [Preprocessing Dataset](https://github.com/USERNAME/REPOSITORY/blob/main/preprocessing_dataset.md)
+
+The raw CT volumes and annotation masks are clinical data collected from **Thống Nhất Hospital** and contain protected patient information. Access to the de-identified imaging data is available on reasonable request for research purposes, in accordance with the applicable institutional and ethical data-sharing requirements.
 
 ## 2. Cohort summary
 
