@@ -11,7 +11,7 @@ The dataset documentation and source code are available at the project repositor
 The repository provides directory organization and file-format descriptions, label definitions, the fixed cross-validation split manifest, preprocessing/normalization procedures, and licensing/terms of use for the released code and documentation (see below, and README.md for environment setup and training/inference/evaluation commands).
 
 - **Link raw dataset (HeNeCT):** [Raw dataset](https://drive.google.com/drive/folders/1mTUBvOLXXeH2AAIAEuaxZyssH2MT_37o?usp=sharing)
-- **Link preprocessed data (henect204_seg):** [Preprocessed dataset](https://drive.google.com/drive/folders/1_3ASVtfWaG85T6QR4hc6z2BtAF-TCsZ1?usp=sharing)
+- **Link preprocessed data (HeNeCT_Lowres or henect204_seg):** [Preprocessed dataset](https://drive.google.com/drive/folders/1_3ASVtfWaG85T6QR4hc6z2BtAF-TCsZ1?usp=sharing)
 
 ## 2. Cohort summary
 
