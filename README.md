@@ -17,7 +17,6 @@ light_training/             # training engine: data loading, preprocessing, loss
 causal-conv1d/, mamba/      # vendored CUDA extensions required by mamba_ssm
 data/henect204_seg/         # dataset root (see DATASET.md)
 experiments/henect204/      # training logs, checkpoints, predictions, metrics (created at runtime)
-note.txt                    # original Vietnamese setup notes this README is based on
 ```
 
 ## 2. Environment setup
